@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Toro Tree Service — Tree Removal, Trimming & Stump Grinding</title>
-  <meta name="description" content="Toro Tree Service: safe tree removal, trimming, stump grinding and 24/7 storm response. Licensed, insured, free estimates." />
+  <title>Tigre Tree Service — Tree Removal, Trimming & Stump Grinding</title>
+  <meta name="description" content="Tigre Tree Service: safe tree removal, trimming, stump grinding and 24/7 storm response. Licensed, insured, free estimates." />
   <meta name="theme-color" content="#10201a" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,23 +14,56 @@
 </head>
 <body>
 
+  <!-- ============ ANIMATED FOREST BACKGROUND ============ -->
+  <div class="forest" aria-hidden="true">
+    <svg class="ridge ridge-far" viewBox="0 0 1600 300" preserveAspectRatio="none"><use href="#ridge" width="1600" height="300" /></svg>
+    <svg class="ridge ridge-mid" viewBox="0 0 1600 300" preserveAspectRatio="none"><use href="#ridge" width="1600" height="300" /></svg>
+
+    <!-- Hero pine that slides down as you scroll -->
+    <div class="pine-track pine-main"><svg viewBox="0 0 200 420"><use href="#pine" width="200" height="420" /></svg></div>
+    <div class="pine-track pine-left"><svg viewBox="0 0 200 420"><use href="#pine" width="200" height="420" /></svg></div>
+    <div class="pine-track pine-small"><svg viewBox="0 0 200 420"><use href="#pine" width="200" height="420" /></svg></div>
+
+    <div class="needles" id="needles"></div>
+  </div>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="pine" viewBox="0 0 200 420">
+        <rect x="92" y="330" width="16" height="90" rx="3" class="trunk" />
+        <g class="pine-sway">
+          <path d="M100 0 L132 70 L118 70 L150 130 L130 130 L168 200 L142 200 L182 280 L150 280 L196 350 L4 350 L50 280 L18 280 L58 200 L32 200 L70 130 L50 130 L82 70 L68 70 Z" class="foliage" />
+          <path d="M100 0 L132 70 L118 70 L150 130 L130 130 L168 200 L142 200 L182 280 L150 280 L196 350 L100 350 Z" class="foliage-shade" />
+        </g>
+      </symbol>
+      <symbol id="ridge" viewBox="0 0 1600 300" preserveAspectRatio="none">
+        <path d="M0 300 V210 L40 140 L60 180 L90 90 L120 170 L150 120 L180 190 L220 70 L260 180 L300 130 L330 200 L370 100 L410 190 L450 140 L480 200 L520 60 L560 180 L600 120 L640 200 L680 110 L720 190 L760 80 L800 180 L840 140 L880 200 L920 90 L960 190 L1000 130 L1040 200 L1080 70 L1120 180 L1160 120 L1200 200 L1240 100 L1280 190 L1320 140 L1360 200 L1400 80 L1440 180 L1480 130 L1520 200 L1560 110 L1600 190 V300 Z" />
+      </symbol>
+    </defs>
+  </svg>
+
   <!-- ============ NAV ============ -->
   <header class="nav" id="nav">
-    <a href="#top" class="brand" aria-label="Toro Tree Service home">
+    <a href="#top" class="brand" aria-label="Tigre Tree Service">
       <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L52 40 H39 L45 52 H19 L25 40 H12 Z" fill="currentColor"/><rect x="29" y="52" width="6" height="8" fill="currentColor"/></svg>
-      <span class="brand-text"><strong>TORO</strong><small>Tree Service</small></span>
+      <span class="brand-text"><strong>TIGRE</strong><small>Tree Service</small></span>
     </a>
     <nav class="nav-links" id="navLinks">
-      <a href="#services">Services</a>
-      <a href="#why">Why Toro</a>
-      <a href="#process">Process</a>
-      <a href="#work">Our Work</a>
-      <a href="#contact">Contact</a>
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#why" data-i18n="nav.why">Why Tigre</a>
+      <a href="#process" data-i18n="nav.process">Process</a>
+      <a href="#work" data-i18n="nav.work">Our Work</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
     <div class="nav-cta">
       <a href="tel:+15025550142" class="nav-phone">(502) 555-0142</a>
-      <a href="#contact" class="btn btn-sm btn-accent">Free Estimate</a>
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="es" aria-pressed="false">ES</button>
+        <span class="lang-thumb"></span>
+      </div>
+      <a href="#contact" class="btn btn-sm btn-accent" data-i18n="cta.estimate">Free Estimate</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
     </div>
   </header>
 
@@ -42,30 +75,30 @@
       </video>
       <div class="hero-shade"></div>
       <div class="hero-content" id="heroContent">
-        <p class="eyebrow reveal-load" style="--d:.1s"><span class="dot"></span> Licensed &amp; insured · Serving Louisville &amp; beyond</p>
+        <p class="eyebrow reveal-load" style="--d:.1s"><span class="dot"></span> <span data-i18n="hero.eyebrow">Licensed &amp; insured · Serving Louisville &amp; beyond</span></p>
         <h1 class="hero-title">
-          <span class="line"><span class="reveal-load" style="--d:.2s">Big trees.</span></span>
-          <span class="line"><em class="reveal-load" style="--d:.35s">Clean cuts.</em></span>
-          <span class="line"><span class="reveal-load" style="--d:.5s">Zero worries.</span></span>
+          <span class="line"><span class="reveal-load" style="--d:.2s" data-i18n="hero.l1">Big trees.</span></span>
+          <span class="line"><em class="reveal-load" style="--d:.35s" data-i18n="hero.l2">Clean cuts.</em></span>
+          <span class="line"><span class="reveal-load" style="--d:.5s" data-i18n="hero.l3">Zero worries.</span></span>
         </h1>
-        <p class="hero-sub reveal-load" style="--d:.65s">Removal, trimming, stump grinding and 24/7 storm response — done safely by a crew that leaves your yard cleaner than we found it.</p>
+        <p class="hero-sub reveal-load" style="--d:.65s" data-i18n="hero.sub">Removal, trimming, stump grinding and 24/7 storm response — done safely by a crew that leaves your yard cleaner than we found it.</p>
         <div class="hero-actions reveal-load" style="--d:.8s">
-          <a href="#contact" class="btn btn-accent">Get a Free Estimate <span class="arrow">→</span></a>
-          <a href="tel:+15025550142" class="btn btn-ghost">Call (502) 555-0142</a>
+          <a href="#contact" class="btn btn-accent"><span data-i18n="hero.cta1">Get a Free Estimate</span> <span class="arrow">→</span></a>
+          <a href="tel:+15025550142" class="btn btn-ghost"><span data-i18n="hero.cta2">Call</span> (502) 555-0142</a>
         </div>
       </div>
       <div class="hero-badges reveal-load" style="--d:1s">
-        <div class="badge"><strong>4.9★</strong><span>Customer rating</span></div>
-        <div class="badge"><strong>24/7</strong><span>Emergency crew</span></div>
-        <div class="badge"><strong>$0</strong><span>Estimates</span></div>
+        <div class="badge"><strong>4.9★</strong><span data-i18n="badge.1">Customer rating</span></div>
+        <div class="badge"><strong>24/7</strong><span data-i18n="badge.2">Emergency crew</span></div>
+        <div class="badge"><strong>$0</strong><span data-i18n="badge.3">Estimates</span></div>
       </div>
-      <a href="#statement" class="scroll-cue" aria-label="Scroll down"><span></span></a>
+      <a href="#statement" class="scroll-cue" aria-label="Scroll"><span></span></a>
     </div>
   </section>
 
   <!-- ============ MARQUEE ============ -->
   <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
+    <div class="marquee-track" data-i18n="marquee">
       <span>Tree Removal</span><i>✦</i><span>Trimming &amp; Pruning</span><i>✦</i><span>Stump Grinding</span><i>✦</i><span>Storm Cleanup</span><i>✦</i><span>Land Clearing</span><i>✦</i><span>Tree Health</span><i>✦</i>
       <span>Tree Removal</span><i>✦</i><span>Trimming &amp; Pruning</span><i>✦</i><span>Stump Grinding</span><i>✦</i><span>Storm Cleanup</span><i>✦</i><span>Land Clearing</span><i>✦</i><span>Tree Health</span><i>✦</i>
     </div>
@@ -73,52 +106,52 @@
 
   <!-- ============ STATEMENT ============ -->
   <section class="statement" id="statement">
-    <p class="kicker">— Our promise</p>
+    <p class="kicker" data-i18n="statement.kicker">— Our promise</p>
     <p class="scrub" id="scrub">We take down the dangerous ones, save the healthy ones, and treat your property like it's our own. No surprise fees, no mess left behind, no shortcuts on safety.</p>
   </section>
 
   <!-- ============ SERVICES ============ -->
   <section class="services section" id="services">
     <div class="section-head">
-      <p class="kicker reveal">— What we do</p>
-      <h2 class="reveal">Every job, from one limb <em>to the whole tree.</em></h2>
+      <p class="kicker reveal" data-i18n="services.kicker">— What we do</p>
+      <h2 class="reveal" data-i18n="services.title">Every job, from one limb <em>to the whole tree.</em></h2>
     </div>
     <div class="service-grid">
       <article class="service reveal">
         <span class="num">01</span>
         <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4 L38 28 H30 L35 37 H13 L18 28 H10 Z"/><path d="M24 37v8"/><path d="M6 44h36"/></svg>
-        <h3>Tree Removal</h3>
-        <p>Dead, leaning or too close to the house — we bring it down piece by piece, with zero damage to what's around it.</p>
+        <h3 data-i18n="s1.t">Tree Removal</h3>
+        <p data-i18n="s1.d">Dead, leaning or too close to the house — we bring it down piece by piece, with zero damage to what's around it.</p>
       </article>
       <article class="service reveal">
         <span class="num">02</span>
         <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="12" cy="36" r="5"/><circle cx="12" cy="14" r="5"/><path d="M16 17l26 17M16 33l26-17"/></svg>
-        <h3>Trimming &amp; Pruning</h3>
-        <p>Healthier trees, more sunlight and branches safely away from roofs, power lines and driveways.</p>
+        <h3 data-i18n="s2.t">Trimming &amp; Pruning</h3>
+        <p data-i18n="s2.d">Healthier trees, more sunlight and branches safely away from roofs, power lines and driveways.</p>
       </article>
       <article class="service reveal">
         <span class="num">03</span>
         <svg viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="24" cy="30" rx="16" ry="6"/><path d="M8 30v6c0 3.3 7.2 6 16 6s16-2.7 16-6v-6"/><path d="M18 22l-4-10M30 22l4-10M24 22V8"/></svg>
-        <h3>Stump Grinding</h3>
-        <p>We grind stumps below ground level so you can plant, mow or build right over the spot.</p>
+        <h3 data-i18n="s3.t">Stump Grinding</h3>
+        <p data-i18n="s3.d">We grind stumps below ground level so you can plant, mow or build right over the spot.</p>
       </article>
       <article class="service reveal">
         <span class="num">04</span>
         <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 24a10 10 0 1 1 19-5 8 8 0 1 1 1 16H14a6 6 0 0 1 0-11z"/><path d="M24 30l-4 8h6l-3 7"/></svg>
-        <h3>Storm &amp; Emergency</h3>
-        <p>Tree on the roof at 2 a.m.? Call us. A crew is on the way day or night, and we help with insurance photos.</p>
+        <h3 data-i18n="s4.t">Storm &amp; Emergency</h3>
+        <p data-i18n="s4.d">Tree on the roof at 2 a.m.? Call us. A crew is on the way day or night, and we help with insurance photos.</p>
       </article>
       <article class="service reveal">
         <span class="num">05</span>
         <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 40h40"/><path d="M10 40V28l6-8 6 8v12M26 40V24l8-12 8 12v16"/></svg>
-        <h3>Land Clearing</h3>
-        <p>Brush, overgrowth and small trees cleared fast for new builds, fences, gardens or simply more space.</p>
+        <h3 data-i18n="s5.t">Land Clearing</h3>
+        <p data-i18n="s5.d">Brush, overgrowth and small trees cleared fast for new builds, fences, gardens or simply more space.</p>
       </article>
       <article class="service reveal">
         <span class="num">06</span>
         <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 44V20"/><path d="M24 28c-8 0-14-6-14-14 8 0 14 6 14 14zM24 22c0-8 6-14 14-14 0 8-6 14-14 14z"/></svg>
-        <h3>Tree Health Checks</h3>
-        <p>Not sure if a tree is safe? We'll inspect it, explain what we see and only recommend removal when it's truly needed.</p>
+        <h3 data-i18n="s6.t">Tree Health Checks</h3>
+        <p data-i18n="s6.d">Not sure if a tree is safe? We'll inspect it, explain what we see and only recommend removal when it's truly needed.</p>
       </article>
     </div>
   </section>
@@ -126,39 +159,39 @@
   <!-- ============ WHY ============ -->
   <section class="why section" id="why">
     <div class="why-media reveal">
-      <div class="parallax-img" data-speed="0.12"><img src="assets/moss.jpg" alt="Close-up of a moss-covered oak log" loading="lazy" /></div>
-      <div class="why-tag"><strong>15+</strong><span>years in the trees</span></div>
+      <div class="parallax-img" data-speed="0.12"><img src="assets/moss.jpg" alt="" loading="lazy" /></div>
+      <div class="why-tag"><strong>15+</strong><span data-i18n="why.tag">years in the trees</span></div>
     </div>
     <div class="why-copy">
-      <p class="kicker reveal">— Why Toro</p>
-      <h2 class="reveal">Strong as the name. <em>Careful as a surgeon.</em></h2>
+      <p class="kicker reveal" data-i18n="why.kicker">— Why Tigre</p>
+      <h2 class="reveal" data-i18n="why.title">Strong as the name. <em>Careful as a surgeon.</em></h2>
       <ul class="checks">
-        <li class="reveal"><span>✓</span><div><strong>Fully licensed &amp; insured</strong><p>You're protected on every single job — ask us for the certificate anytime.</p></div></li>
-        <li class="reveal"><span>✓</span><div><strong>Clear, written prices</strong><p>The number on your estimate is the number on your invoice. No surprises.</p></div></li>
-        <li class="reveal"><span>✓</span><div><strong>Spotless cleanup</strong><p>We haul away every branch, chip and leaf before we leave.</p></div></li>
-        <li class="reveal"><span>✓</span><div><strong>Se habla español</strong><p>Atendemos en inglés y en español.</p></div></li>
+        <li class="reveal"><span>✓</span><div><strong data-i18n="w1.t">Fully licensed &amp; insured</strong><p data-i18n="w1.d">You're protected on every single job — ask us for the certificate anytime.</p></div></li>
+        <li class="reveal"><span>✓</span><div><strong data-i18n="w2.t">Clear, written prices</strong><p data-i18n="w2.d">The number on your estimate is the number on your invoice. No surprises.</p></div></li>
+        <li class="reveal"><span>✓</span><div><strong data-i18n="w3.t">Spotless cleanup</strong><p data-i18n="w3.d">We haul away every branch, chip and leaf before we leave.</p></div></li>
+        <li class="reveal"><span>✓</span><div><strong data-i18n="w4.t">Se habla español</strong><p data-i18n="w4.d">We serve you in English and Spanish.</p></div></li>
       </ul>
     </div>
   </section>
 
   <!-- ============ STATS ============ -->
   <section class="stats">
-    <div class="stat reveal"><strong data-count="2400" data-suffix="+">0</strong><span>Trees safely handled</span></div>
-    <div class="stat reveal"><strong data-count="15" data-suffix="+">0</strong><span>Years of experience</span></div>
-    <div class="stat reveal"><strong data-count="98" data-suffix="%">0</strong><span>Would hire us again</span></div>
-    <div class="stat reveal"><strong data-count="60" data-suffix=" min">0</strong><span>Avg. emergency response</span></div>
+    <div class="stat reveal"><strong data-count="2400" data-suffix="+">0</strong><span data-i18n="st.1">Trees safely handled</span></div>
+    <div class="stat reveal"><strong data-count="15" data-suffix="+">0</strong><span data-i18n="st.2">Years of experience</span></div>
+    <div class="stat reveal"><strong data-count="98" data-suffix="%">0</strong><span data-i18n="st.3">Would hire us again</span></div>
+    <div class="stat reveal"><strong data-count="60" data-suffix=" min">0</strong><span data-i18n="st.4">Avg. emergency response</span></div>
   </section>
 
   <!-- ============ PROCESS ============ -->
   <section class="process section" id="process">
     <div class="section-head">
-      <p class="kicker reveal">— How it works</p>
-      <h2 class="reveal">Three simple steps <em>to a safer yard.</em></h2>
+      <p class="kicker reveal" data-i18n="pr.kicker">— How it works</p>
+      <h2 class="reveal" data-i18n="pr.title">Three simple steps <em>to a safer yard.</em></h2>
     </div>
     <ol class="steps">
-      <li class="step reveal"><span class="step-n">1</span><h3>Tell us about the tree</h3><p>Call, text or fill out the form. Send a photo if you can — it helps us quote faster.</p></li>
-      <li class="step reveal"><span class="step-n">2</span><h3>Get a free, written estimate</h3><p>We visit, walk the property with you and give you a clear price. Usually within 24 hours.</p></li>
-      <li class="step reveal"><span class="step-n">3</span><h3>We do the work &amp; clean up</h3><p>On the scheduled day, our crew handles everything and leaves your yard spotless.</p></li>
+      <li class="step reveal"><span class="step-n">1</span><h3 data-i18n="p1.t">Tell us about the tree</h3><p data-i18n="p1.d">Call, text or fill out the form. Send a photo if you can — it helps us quote faster.</p></li>
+      <li class="step reveal"><span class="step-n">2</span><h3 data-i18n="p2.t">Get a free, written estimate</h3><p data-i18n="p2.d">We visit, walk the property with you and give you a clear price. Usually within 24 hours.</p></li>
+      <li class="step reveal"><span class="step-n">3</span><h3 data-i18n="p3.t">We do the work &amp; clean up</h3><p data-i18n="p3.d">On the scheduled day, our crew handles everything and leaves your yard spotless.</p></li>
     </ol>
   </section>
 
@@ -166,39 +199,39 @@
   <section class="work section" id="work">
     <div class="section-head row">
       <div>
-        <p class="kicker reveal">— Our work</p>
-        <h2 class="reveal">Real jobs. <em>Real results.</em></h2>
+        <p class="kicker reveal" data-i18n="wk.kicker">— Our work</p>
+        <h2 class="reveal" data-i18n="wk.title">Real jobs. <em>Real results.</em></h2>
       </div>
-      <a href="#contact" class="link-arrow reveal">Start your project →</a>
+      <a href="#contact" class="link-arrow reveal" data-i18n="wk.link">Start your project →</a>
     </div>
     <div class="gallery">
-      <figure class="g-item g-tall reveal"><img src="assets/cut.jpg" alt="Chainsaw cutting through a mossy log" loading="lazy" /><figcaption><strong>Fallen oak removal</strong><span>Prospect, KY</span></figcaption></figure>
-      <figure class="g-item reveal"><img src="assets/saw.jpg" alt="Crew member cutting a log with a chainsaw" loading="lazy" /><figcaption><strong>Storm cleanup</strong><span>Jeffersontown, KY</span></figcaption></figure>
-      <figure class="g-item reveal"><img src="assets/log.jpg" alt="Long moss-covered log ready for removal" loading="lazy" /><figcaption><strong>Backyard clearing</strong><span>Louisville, KY</span></figcaption></figure>
+      <figure class="g-item g-tall reveal"><img src="assets/cut.jpg" alt="" loading="lazy" /><figcaption><strong data-i18n="g1">Fallen oak removal</strong><span>Prospect, KY</span></figcaption></figure>
+      <figure class="g-item reveal"><img src="assets/saw.jpg" alt="" loading="lazy" /><figcaption><strong data-i18n="g2">Storm cleanup</strong><span>Jeffersontown, KY</span></figcaption></figure>
+      <figure class="g-item reveal"><img src="assets/log.jpg" alt="" loading="lazy" /><figcaption><strong data-i18n="g3">Backyard clearing</strong><span>Louisville, KY</span></figcaption></figure>
     </div>
   </section>
 
   <!-- ============ REVIEWS ============ -->
   <section class="reviews section">
     <div class="section-head center">
-      <p class="kicker reveal">— Reviews <span class="demo-note">(sample reviews for demo)</span></p>
-      <h2 class="reveal">Neighbors who <em>sleep better now.</em></h2>
+      <p class="kicker reveal"><span data-i18n="rv.kicker">— Reviews</span> <span class="demo-note" data-i18n="rv.demo">(sample reviews for demo)</span></p>
+      <h2 class="reveal" data-i18n="rv.title">Neighbors who <em>sleep better now.</em></h2>
     </div>
     <div class="review-grid">
       <blockquote class="review reveal">
         <div class="stars">★★★★★</div>
-        <p>“A huge maple was leaning over our bedroom. They took it down in one afternoon and you'd never know it was there. Unreal cleanup.”</p>
-        <footer><span class="avatar">M</span><div><strong>Melissa R.</strong><small>Tree removal</small></div></footer>
+        <p data-i18n="r1.q">“A huge maple was leaning over our bedroom. They took it down in one afternoon and you'd never know it was there. Unreal cleanup.”</p>
+        <footer><span class="avatar">M</span><div><strong>Melissa R.</strong><small data-i18n="r1.s">Tree removal</small></div></footer>
       </blockquote>
       <blockquote class="review reveal">
         <div class="stars">★★★★★</div>
-        <p>“Called at 11 p.m. after the storm. They were here before midnight and had the driveway clear by morning.”</p>
-        <footer><span class="avatar">D</span><div><strong>David K.</strong><small>Emergency service</small></div></footer>
+        <p data-i18n="r2.q">“Called at 11 p.m. after the storm. They were here before midnight and had the driveway clear by morning.”</p>
+        <footer><span class="avatar">D</span><div><strong>David K.</strong><small data-i18n="r2.s">Emergency service</small></div></footer>
       </blockquote>
       <blockquote class="review reveal">
         <div class="stars">★★★★★</div>
-        <p>“Fair price, on time, and they explained everything. Me atendieron en español, ¡excelente servicio!”</p>
-        <footer><span class="avatar">C</span><div><strong>Carlos M.</strong><small>Trimming &amp; stump grinding</small></div></footer>
+        <p data-i18n="r3.q">“Fair price, on time, and they explained everything. Me atendieron en español, ¡excelente servicio!”</p>
+        <footer><span class="avatar">C</span><div><strong>Carlos M.</strong><small data-i18n="r3.s">Trimming &amp; stump grinding</small></div></footer>
       </blockquote>
     </div>
   </section>
@@ -207,68 +240,69 @@
   <section class="emergency">
     <div class="emergency-inner reveal">
       <div>
-        <p class="pulse"><span></span> On call right now</p>
-        <h2>Storm damage? <em>We're there in about an hour.</em></h2>
+        <p class="pulse"><span></span> <b data-i18n="em.k">On call right now</b></p>
+        <h2 data-i18n="em.t">Storm damage? <em>We're there in about an hour.</em></h2>
       </div>
-      <a href="tel:+15025550142" class="btn btn-accent btn-lg">Call 24/7 · (502) 555-0142</a>
+      <a href="tel:+15025550142" class="btn btn-accent btn-lg"><span data-i18n="em.cta">Call 24/7</span> · (502) 555-0142</a>
     </div>
   </section>
 
   <!-- ============ CONTACT ============ -->
   <section class="contact section" id="contact">
     <div class="contact-info">
-      <p class="kicker reveal">— Free estimate</p>
-      <h2 class="reveal">Let's take a look <em>at your trees.</em></h2>
-      <p class="reveal muted">Tell us a little about the job and we'll get back to you the same day with next steps.</p>
+      <p class="kicker reveal" data-i18n="ct.kicker">— Free estimate</p>
+      <h2 class="reveal" data-i18n="ct.title">Let's take a look <em>at your trees.</em></h2>
+      <p class="reveal muted" data-i18n="ct.sub">Tell us a little about the job and we'll get back to you the same day with next steps.</p>
       <ul class="contact-list reveal">
-        <li><span>Phone</span><a href="tel:+15025550142">(502) 555-0142</a></li>
-        <li><span>WhatsApp</span><a href="https://wa.me/15025550142" target="_blank" rel="noopener">Message us</a></li>
-        <li><span>Email</span><a href="mailto:hello@torotreeservice.com">hello@torotreeservice.com</a></li>
-        <li><span>Hours</span><p>Mon–Sat 7am–7pm · Emergencies 24/7</p></li>
-        <li><span>Area</span><p>Louisville, Jeffersontown, Prospect, Shively &amp; nearby</p></li>
+        <li><span data-i18n="ci.phone">Phone</span><a href="tel:+15025550142">(502) 555-0142</a></li>
+        <li><span>WhatsApp</span><a href="https://wa.me/15025550142" target="_blank" rel="noopener" data-i18n="ci.wa">Message us</a></li>
+        <li><span>Email</span><a href="mailto:hello@tigretreeservice.com">hello@tigretreeservice.com</a></li>
+        <li><span data-i18n="ci.hours">Hours</span><p data-i18n="ci.hoursv">Mon–Sat 7am–7pm · Emergencies 24/7</p></li>
+        <li><span data-i18n="ci.area">Area</span><p data-i18n="ci.areav">Louisville, Jeffersontown, Prospect, Shively &amp; nearby</p></li>
       </ul>
     </div>
     <form class="contact-form reveal" id="contactForm">
-      <div class="field"><label for="name">Full name</label><input id="name" name="name" required placeholder="Jane Smith" /></div>
+      <div class="field"><label for="name" data-i18n="f.name">Full name</label><input id="name" name="name" required placeholder="Jane Smith" /></div>
       <div class="field-row">
-        <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required placeholder="(502) 000-0000" /></div>
-        <div class="field"><label for="zip">ZIP code</label><input id="zip" name="zip" inputmode="numeric" placeholder="40299" /></div>
+        <div class="field"><label for="phone" data-i18n="f.phone">Phone</label><input id="phone" name="phone" type="tel" required placeholder="(502) 000-0000" /></div>
+        <div class="field"><label for="zip" data-i18n="f.zip">ZIP code</label><input id="zip" name="zip" inputmode="numeric" placeholder="40299" /></div>
       </div>
       <div class="field">
-        <label>What do you need?</label>
+        <label data-i18n="f.need">What do you need?</label>
         <div class="chips">
-          <label><input type="checkbox" name="svc" value="removal" /><span>Removal</span></label>
-          <label><input type="checkbox" name="svc" value="trimming" /><span>Trimming</span></label>
-          <label><input type="checkbox" name="svc" value="stump" /><span>Stump grinding</span></label>
-          <label><input type="checkbox" name="svc" value="storm" /><span>Storm / emergency</span></label>
-          <label><input type="checkbox" name="svc" value="other" /><span>Other</span></label>
+          <label><input type="checkbox" name="svc" value="removal" /><span data-i18n="c1">Removal</span></label>
+          <label><input type="checkbox" name="svc" value="trimming" /><span data-i18n="c2">Trimming</span></label>
+          <label><input type="checkbox" name="svc" value="stump" /><span data-i18n="c3">Stump grinding</span></label>
+          <label><input type="checkbox" name="svc" value="storm" /><span data-i18n="c4">Storm / emergency</span></label>
+          <label><input type="checkbox" name="svc" value="other" /><span data-i18n="c5">Other</span></label>
         </div>
       </div>
-      <div class="field"><label for="msg">Tell us about the job</label><textarea id="msg" name="msg" rows="4" placeholder="e.g. Large oak leaning toward the garage, about 40 ft tall…"></textarea></div>
-      <button type="submit" class="btn btn-accent btn-block">Request my free estimate <span class="arrow">→</span></button>
-      <p class="form-note">We reply the same day. No spam, ever.</p>
+      <div class="field"><label for="msg" data-i18n="f.msg">Tell us about the job</label><textarea id="msg" name="msg" rows="4" data-i18n-ph="f.msgph" placeholder="e.g. Large oak leaning toward the garage, about 40 ft tall…"></textarea></div>
+      <button type="submit" class="btn btn-accent btn-block"><span data-i18n="f.submit">Request my free estimate</span> <span class="arrow">→</span></button>
+      <p class="form-note" data-i18n="f.note">We reply the same day. No spam, ever.</p>
       <div class="form-success" id="formSuccess" hidden>
-        <strong>Thanks! ✓</strong>
-        <p>We got your request and will call you shortly.</p>
+        <strong data-i18n="f.ok">Thanks! ✓</strong>
+        <p data-i18n="f.okd">We got your request and will call you shortly.</p>
       </div>
     </form>
   </section>
 
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
-    <div class="footer-big" aria-hidden="true">TORO</div>
+    <div class="footer-big" aria-hidden="true">TIGRE</div>
     <div class="footer-row">
-      <p>© <span id="year"></span> Toro Tree Service. All rights reserved.</p>
-      <p class="credit">Demo website designed &amp; built by <a href="https://webcreatorwd.com" target="_blank" rel="noopener">Web Creator</a></p>
+      <p>© <span id="year"></span> Tigre Tree Service. <span data-i18n="ft.rights">All rights reserved.</span></p>
+      <p class="credit"><span data-i18n="ft.credit">Demo website designed &amp; built by</span> <a href="https://webcreatorwd.com" target="_blank" rel="noopener">Web Creator</a></p>
     </div>
   </footer>
 
   <!-- Mobile action bar -->
   <div class="mobile-bar">
-    <a href="tel:+15025550142" class="btn btn-ghost-dark">Call now</a>
-    <a href="#contact" class="btn btn-accent">Free Estimate</a>
+    <a href="tel:+15025550142" class="btn btn-ghost-dark" data-i18n="mb.call">Call now</a>
+    <a href="#contact" class="btn btn-accent" data-i18n="cta.estimate">Free Estimate</a>
   </div>
 
+  <script src="i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
